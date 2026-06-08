@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background: #f8f9ff;
+}
+
+body {
+  background: #f8f9ff;
+  color: #0b1c30;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+.surface-card {
+  @apply rounded-3xl border border-[#c3c5d9] bg-white shadow-[0_4px_20px_rgba(10,17,40,0.05)];
+}
+
+.surface-card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(10,17,40,0.08)];
+}
+
+.section-title {
+  @apply text-[24px] font-bold leading-[1.2] tracking-[-0.01em] text-[#0b1c30] md:text-[32px];
+}
+
+.muted-copy {
+  @apply text-[15px] leading-6 text-[#434656] md:text-[16px];
+}
+
+.eyebrow {
+  @apply text-[12px] font-semibold uppercase tracking-[0.08em] text-[#003ec7] md:text-[13px];
+}
+
+.grid-surface {
+  @apply rounded-[20px] border border-[#d8dbeb] bg-white p-4 shadow-[0_8px_30px_rgba(10,17,40,0.05)] md:rounded-[28px] md:p-8;
+}
+
+.service-map-container {
+  z-index: 0;
+  isolation: isolate;
+}
+
+.service-map-container .leaflet-pane {
+  z-index: 1;
+}
+
+.service-map-container .leaflet-top,
+.service-map-container .leaflet-bottom {
+  z-index: 2;
+}
+
+.service-map-container .leaflet-control {
+  z-index: 3;
+}
+
+.table-responsive {
+  @apply -mx-5 overflow-x-auto px-5 md:mx-0 md:px-0;
+}
+
+.table-responsive > table {
+  @apply min-w-[700px];
+}
+
+@media (min-width: 1024px) {
+  body[data-sidebar-collapsed="true"] main {
+    padding-left: 72px;
+  }
+}
